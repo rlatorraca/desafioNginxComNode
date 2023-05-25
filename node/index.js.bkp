@@ -1,0 +1,19 @@
+const http = require('http');
+
+// Create an HTTP server
+const server = http.createServer((req, res) => {
+  // Set the response headers
+  res.writeHead(200, { 'Content-Type': 'text/html' });
+
+  // Send the welcome page as the response body
+  res.write('<html><body><h1>Welcome to My Node.js App!</h1></body></html>');
+
+  // End the response
+  res.end();
+});
+
+// Start the server and listen on a specific port
+const port = 3000;
+server.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
